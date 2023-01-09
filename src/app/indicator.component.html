@@ -1,0 +1,35 @@
+<mat-grid-list cols="2" rowHeight="100px">
+  <mat-grid-tile colspan="2">
+    <button mat-mini-fab color="accent" (click)="clear()">
+      <mat-icon
+        matBadge="{{ counter }}"
+        matBadgeColor="warn"
+        [matBadgeHidden]="counter === 0"
+      >
+        <img src="assets/envelope.svg" width="24" height="24" />
+      </mat-icon>
+    </button>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1">
+    <button
+      mat-flat-button
+      color="accent"
+      (click)="start()"
+      [disabled]="isRunning"
+    >
+      start
+    </button>
+  </mat-grid-tile>
+
+  <mat-grid-tile colspan="1">
+    <button
+      mat-flat-button
+      color="accent"
+      (click)="stop()"
+      [disabled]="!isRunning"
+    >
+      stop
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>
